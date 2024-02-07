@@ -1,11 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { nanoid } from 'nanoid';
+import 'dotenv/config'
 
 const app = express();
 const PORT = 3001;
 
-mongoose.connect("mongodb://0.0.0.0:27017/urldb", {
+mongoose.connect(process.env.db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
